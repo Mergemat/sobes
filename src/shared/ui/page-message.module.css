@@ -1,0 +1,27 @@
+.root {
+  padding: clamp(24px, 5vw, 48px);
+  border-block: 1px solid var(--line);
+  text-align: center;
+}
+
+.root h1 {
+  margin-top: 0;
+}
+
+.root p {
+  color: var(--muted);
+}
+
+.action > a {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 14px;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+.action > a:hover {
+  background: #104e2e;
+}

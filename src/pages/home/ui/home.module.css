@@ -1,0 +1,59 @@
+.hero {
+  padding-bottom: 72px;
+}
+
+.sectionHeading {
+  margin-bottom: 20px;
+}
+
+.sectionHeading h2 {
+  margin: 4px 0 0;
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.employeeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.employeeCard {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.employeeCard:hover strong {
+  color: var(--accent);
+}
+
+.employeeCard span,
+.employeeCard small {
+  color: var(--muted);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 50%;
+  font-weight: 750;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-bottom: 56px;
+  }
+
+  .employeeGrid {
+    grid-template-columns: 1fr;
+  }
+}

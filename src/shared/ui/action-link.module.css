@@ -1,0 +1,13 @@
+.root {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 14px;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+.root:hover {
+  background: #104e2e;
+}

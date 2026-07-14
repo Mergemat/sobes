@@ -1,0 +1,52 @@
+.backLink {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.backLink:hover {
+  color: #171917;
+}
+
+.article {
+  max-width: 780px;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.sectionTitle {
+  margin: 4px 0 0;
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 28px 0;
+  border-block: 1px solid var(--line);
+}
+
+.facts div {
+  padding: 18px 0;
+}
+
+.facts dt {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.facts dd {
+  margin: 3px 0 0;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .facts {
+    grid-template-columns: 1fr;
+  }
+}

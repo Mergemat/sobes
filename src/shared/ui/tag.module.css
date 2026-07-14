@@ -1,0 +1,18 @@
+.root {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.accent {
+  color: var(--muted);
+}
+
+.neutral {
+  color: var(--muted);
+}

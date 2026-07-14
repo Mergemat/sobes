@@ -1,0 +1,50 @@
+.backLink {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.backLink:hover {
+  color: #171917;
+}
+
+.article {
+  max-width: 780px;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.sectionTitle {
+  margin: 4px 0 0;
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 50%;
+  font-size: 1.35rem;
+  font-weight: 750;
+}
+
+.bio {
+  max-width: 650px;
+}
+
+.tagList {
+  margin-top: 10px;
+}
+
+.action {
+  margin-top: 12px;
+}

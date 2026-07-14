@@ -10,10 +10,9 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@contracts": ["contracts/index.ts"]
+      "@/*": ["./src/*"],
+      "@contracts": ["./contracts/index.ts"]
     },
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
