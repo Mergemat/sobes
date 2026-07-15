@@ -9,7 +9,7 @@ export function VacancyCard({ vacancy }: { vacancy: Vacancy }) {
     <article className={styles.card}>
       <div>
         <Tag>{vacancy.category}</Tag>
-        {vacancy.on_replacement ? <Tag tone="neutral">На замену</Tag> : null}
+        {vacancy.on_replacement && <Tag tone="neutral">На замену</Tag>}
       </div>
       <h2>
         <Link to={`/vacancies/${vacancy.id}`}>{vacancy.title}</Link>

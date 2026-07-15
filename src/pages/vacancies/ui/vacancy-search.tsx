@@ -8,6 +8,36 @@ type VacancySearchProps = {
   onClear: () => void
 }
 
+function SearchAction({
+  isDebouncing,
+  hasValue,
+  onClear,
+}: {
+  isDebouncing: boolean
+  hasValue: boolean
+  onClear: () => void
+}) {
+  if (isDebouncing)
+    return (
+      <span role="status" aria-label="Идёт поиск" aria-live="polite">
+        <span className={styles.searchLoader} aria-hidden="true" />
+      </span>
+    )
+
+  if (!hasValue) return null
+
+  return (
+    <button
+      className={styles.searchClear}
+      type="button"
+      onClick={onClear}
+      aria-label="Очистить поиск"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  )
+}
+
 export function VacancySearch({ isDebouncing, value, onChange, onClear }: VacancySearchProps) {
   return (
     <div className={styles.search}>
@@ -22,20 +52,7 @@ export function VacancySearch({ isDebouncing, value, onChange, onClear }: Vacanc
           className={styles.searchInput}
         />
         <span className={styles.searchAction}>
-          {isDebouncing ? (
-            <span role="status" aria-label="Идёт поиск" aria-live="polite">
-              <span className={styles.searchLoader} aria-hidden="true" />
-            </span>
-          ) : value ? (
-            <button
-              className={styles.searchClear}
-              type="button"
-              onClick={onClear}
-              aria-label="Очистить поиск"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
-          ) : null}
+          <SearchAction isDebouncing={isDebouncing} hasValue={Boolean(value)} onClear={onClear} />
         </span>
       </div>
     </div>

@@ -10,14 +10,14 @@ export function HomePage() {
   return (
     <Page>
       <HomeHero />
-      {employees.isPending ? <LoadingMessage>Загружаем сотрудников…</LoadingMessage> : null}
-      {employees.isError ? (
+      {employees.isPending && <LoadingMessage>Загружаем сотрудников…</LoadingMessage>}
+      {employees.isError && (
         <PageMessage
           title="Не удалось загрузить команду"
           action={<Button onClick={() => employees.refetch()}>Повторить</Button>}
         />
-      ) : null}
-      {employees.data ? <EmployeeList employees={employees.data} /> : null}
+      )}
+      {employees.data && <EmployeeList employees={employees.data} />}
     </Page>
   )
 }

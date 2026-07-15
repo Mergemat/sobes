@@ -3,6 +3,12 @@ import styles from './vacancies.module.css'
 
 type LoadMoreProps = { hasMore: boolean; loading: boolean; onLoadMore: () => void }
 
+function getMessage(hasMore: boolean, loading: boolean) {
+  if (loading) return 'Загружаем ещё…'
+  if (hasMore) return 'Прокрутите ниже'
+  return 'Все вакансии загружены'
+}
+
 export function LoadMore({ hasMore, loading, onLoadMore }: LoadMoreProps) {
   const sentinel = useRef<HTMLDivElement>(null)
 
@@ -21,7 +27,7 @@ export function LoadMore({ hasMore, loading, onLoadMore }: LoadMoreProps) {
 
   return (
     <div className={styles.loadMore} ref={sentinel} role="status" aria-live="polite">
-      {loading ? 'Загружаем ещё…' : hasMore ? 'Прокрутите ниже' : 'Все вакансии загружены'}
+      {getMessage(hasMore, loading)}
     </div>
   )
 }
