@@ -45,7 +45,7 @@ function ResultsContent({ query, items }: { query: VacancyQueryResult; items?: V
     <>
       <VacancyList items={items} />
       <LoadMore
-        hasMore={Boolean(query.hasNextPage)}
+        hasMore={query.hasNextPage}
         loading={query.isFetchingNextPage}
         onLoadMore={() => void query.fetchNextPage()}
       />
