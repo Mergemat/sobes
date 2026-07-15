@@ -1,5 +1,6 @@
 import { serveStatic } from '@hono/node-server/serve-static'
 import { Hono } from 'hono'
+import { setTimeout as delay } from 'node:timers/promises'
 import { fileURLToPath } from 'node:url'
 import type { ApiError } from '../contracts'
 import { employees, vacancies } from './seed'
@@ -8,6 +9,7 @@ import { getVacancies } from './vacancy-store'
 const api = new Hono().basePath('/api')
 
 api.use('*', async (context, next) => {
+  await delay(200)
   await next()
   context.header('Cache-Control', 'no-store')
 })

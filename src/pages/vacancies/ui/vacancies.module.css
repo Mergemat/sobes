@@ -89,9 +89,24 @@
   align-items: start;
 }
 
-.resultCount {
+.resultMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   color: var(--muted);
   font-size: 0.875rem;
+}
+
+.updating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+}
+
+.updating .searchLoader {
+  width: 13px;
+  height: 13px;
 }
 
 .listHeading {

@@ -15,6 +15,7 @@ export function VacanciesPage() {
   const pages = vacancies.data?.pages
   const items = pages?.flatMap((page) => page.items) ?? []
   const firstPage = pages?.[0]
+  const isUpdating = vacancies.isFetching && !vacancies.isPending && !vacancies.isFetchingNextPage
 
   return (
     <Page>
@@ -33,12 +34,18 @@ export function VacanciesPage() {
       />
 
       <div className={styles.layout}>
-        <section aria-label="Список вакансий">
+        <section aria-label="Список вакансий" aria-busy={isUpdating}>
           <div className={styles.listHeading}>
             <strong className={styles.controlLabel}>Вакансии</strong>
-            {firstPage ? (
-              <span className={styles.resultCount}>Найдено: {firstPage.total}</span>
-            ) : null}
+            <div className={styles.resultMeta}>
+              {isUpdating ? (
+                <span className={styles.updating} role="status" aria-live="polite">
+                  <span className={styles.searchLoader} aria-hidden="true" />
+                  Обновляем…
+                </span>
+              ) : null}
+              {firstPage ? <span>Найдено: {firstPage.total}</span> : null}
+            </div>
           </div>
           {vacancies.isPending ? <LoadingMessage>Ищем подходящие вакансии…</LoadingMessage> : null}
           {vacancies.isError ? (
